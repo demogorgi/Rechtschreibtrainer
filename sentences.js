@@ -1008,7 +1008,7 @@ window.SENTENCES_DATA = {
     "pre": "Die ",
     "answer": "Schlange",
     "post": " ist sehr lang.",
-    "emoji": "↔️"
+    "emoji": "🐍"
   },
   {
     "pre": "Der ",

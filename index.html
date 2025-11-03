@@ -100,13 +100,18 @@
             background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             font-size: 1em;
             border-radius: 8px;
             cursor: pointer;
             margin-top: 10px;
             margin-right: 10px;
             transition: background-color 0.3s;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
         }
         
         .check-button:hover {
@@ -123,6 +128,11 @@
             cursor: pointer;
             margin-top: 10px;
             transition: background-color 0.3s;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
         }
         
         .speak-button:hover {
@@ -192,6 +202,8 @@
         <p>Fülle die Lücken aus – Emojis helfen dir dabei. Normal: 10 Fragen, Schwer: 5 Fragen.</p>
         <div style="font-size: 0.8em; color: #666; margin-top: 10px;">
             Version: <span id="version-info">Lädt...</span>
+            <br>
+            <button class="speak-button" onclick="checkForUpdates()" title="Neue Version laden" style="font-size: inherit; font-family: inherit; padding: 6px 10px; margin-top: 5px;">Auf neue Version prüfen</button>
         </div>
     </div>
 
@@ -494,6 +506,24 @@
             const timeString = now.toLocaleTimeString('de-DE');
             const dateString = now.toLocaleDateString('de-DE');
             document.getElementById('version-info').textContent = `${dateString} ${timeString}`;
+        }
+
+        // Auf neue Version prüfen
+        function checkForUpdates() {
+            console.log('Prüfe auf neue Version...');
+            
+            // Cache komplett leeren
+            if ('caches' in window) {
+                caches.keys().then(names => {
+                    names.forEach(name => {
+                        caches.delete(name);
+                    });
+                    console.log('Cache geleert');
+                });
+            }
+            
+            // Hard Reload (entspricht Strg+Shift+R)
+            window.location.reload(true);
         }
 
         // Intelligente Reload-Funktion für Entwicklung (nur wenn nötig)
