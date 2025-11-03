@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Wörter-Rätsel</title>
     <style>
         body {
@@ -186,7 +189,10 @@
 <body>
     <div class="header">
         <h1>🚗 Wörter-Rätsel 🚗</h1>
-        <p>Bei jedem Start werden 10 zufällige Aufgaben gezeigt. Fülle die Lücken aus – Emojis helfen dir.</p>
+        <p>Fülle die Lücken aus – Emojis helfen dir dabei. Normal: 10 Fragen, Schwer: 5 Fragen.</p>
+        <div style="font-size: 0.8em; color: #666; margin-top: 10px;">
+            Version: <span id="version-info">Lädt...</span>
+        </div>
     </div>
 
     <div class="difficulty-selector">
@@ -204,7 +210,7 @@
     </div>
 
     <div class="score">
-        Punkte: <span id="score">0</span> / <span id="total">10</span>
+        Punkte: <span id="score">0</span> / <span id="total">-</span>
         <div style="margin-top:10px;">
             <button class="check-button" onclick="checkAll()">Alles prüfen</button>
             <button class="speak-button" onclick="newRound()">Neu starten</button>
@@ -213,32 +219,59 @@
 
     <div id="exercises"></div>
 
-    <script src="sentences.js"></script>
     <script>
         // Alle Sätze werden aus der externen JavaScript-Datei geladen
         let SENTENCES = [];
         let currentDifficulty = 'normal';
+
+        // Cache-Busting: Lade sentences.js mit Timestamp und warte auf das Laden
+        const timestamp = new Date().getTime();
+        const script = document.createElement('script');
+        script.src = `sentences.js?v=${timestamp}`;
+        
+        script.onload = function() {
+            console.log('sentences.js erfolgreich geladen');
+            // Initialisierung erst nach dem Laden der Datei
+            initializeApp();
+        };
+        
+        script.onerror = function() {
+            console.error('Fehler beim Laden von sentences.js');
+            // Auch bei Fehlern initialisieren (verwendet dann Fallback)
+            initializeApp();
+        };
+        
+        document.head.appendChild(script);
 
         // Funktion zum Laden der Sätze basierend auf der Schwierigkeit
         function loadSentences() {
             if (window.SENTENCES_DATA && window.SENTENCES_DATA[currentDifficulty]) {
                 SENTENCES = window.SENTENCES_DATA[currentDifficulty];
                 console.log(`${SENTENCES.length} ${currentDifficulty} Sätze aus sentences.js geladen`);
+                
+                // Automatische Überprüfung: Bei sehr wenigen Sätzen nachlargen
+                if (SENTENCES.length < 10) {
+                    console.warn(`Nur ${SENTENCES.length} Sätze geladen - versuche nachladen...`);
+                    setTimeout(smartReload, 1000);
+                }
             } else {
                 // Fallback: Ein paar Beispielsätze falls die externe Datei nicht geladen wurde
-                console.log('Fallback-Sätze geladen - sentences.js nicht verfügbar');
+                console.warn('Fallback-Sätze geladen - sentences.js nicht verfügbar oder unvollständig');
+                console.log('Verfügbare Daten:', window.SENTENCES_DATA);
+                console.log('Aktuelle Schwierigkeit:', currentDifficulty);
+                
                 SENTENCES = [
                     {
-                        pre: "Wenn ",
-                        answer: "er",
-                        post: " die Hausaufgaben gemacht hat, darf er spielen.",
-                        emoji: "👦"
+                        pre: "Fallback-Modus ist ",
+                        answer: "aktiv",
+                        post: ", bitte sentences.js prüfen.",
+                        emoji: "⚠️"
                     },
                     {
-                        pre: "Weil es regnet, ",
-                        answer: "bleiben",
-                        post: " wir heute drinnen.",
-                        emoji: "�️"
+                        pre: "Die Datei ",
+                        answer: "wurde",
+                        post: " nicht korrekt geladen.",
+                        emoji: "🔧"
                     }
                 ];
             }
@@ -263,7 +296,11 @@
         let library = [];
         let selection = [];
         let correctAnswers = 0;
-        const COUNT_PER_ROUND = 10;
+        
+        // Anzahl Fragen je nach Schwierigkeit
+        function getQuestionsCount() {
+            return currentDifficulty === 'schwer' ? 5 : 10;
+        }
 
         // Bibliothek mit IDs vorbereiten
         function buildLibrary() {
@@ -325,7 +362,9 @@
                 const speakBtn = document.createElement('button');
                 speakBtn.className = 'speak-button';
                 speakBtn.textContent = '🔊 Vorlesen';
-                speakBtn.onclick = () => speakWord(it.answer);
+                // Bei Array die erste Variante vorlesen
+                const wordToSpeak = Array.isArray(it.answer) ? it.answer[0] : it.answer;
+                speakBtn.onclick = () => speakWord(wordToSpeak);
 
                 const feedback = document.createElement('div');
                 feedback.className = 'feedback';
@@ -365,7 +404,13 @@
             if (!input || !feedback) return;
 
             const value = (input.value || '').trim();
-            if (value === correct) {
+            
+            // Prüfe ob die Antwort richtig ist (unterstützt sowohl String als auch Array)
+            const isCorrect = Array.isArray(correct) 
+                ? correct.some(answer => value === answer)
+                : value === correct;
+                
+            if (isCorrect) {
                 feedback.textContent = '✅ Richtig!';
                 feedback.className = 'feedback correct';
                 input.style.borderColor = '#4CAF50';
@@ -375,7 +420,12 @@
                     input.dataset.counted = '1';
                 }
             } else {
-                feedback.textContent = `❌ Leider falsch. Tipp: ${correct.length} Buchstaben`;
+                // Erstelle Tipp basierend auf dem Antworttyp
+                const hint = Array.isArray(correct) 
+                    ? `Tipp: ${correct.map(ans => `"${ans}" (${ans.length} Buchstaben)`).join(' oder ')}`
+                    : `Tipp: ${correct.length} Buchstaben`;
+                    
+                feedback.textContent = `❌ Leider falsch. ${hint}`;
                 feedback.className = 'feedback incorrect';
                 input.style.borderColor = '#f44336';
                 input.style.backgroundColor = '#ffebee';
@@ -398,11 +448,19 @@
                 loadSentences();
             }
             
+            // Automatische Qualitätsprüfung
+            if (SENTENCES.length < 5) {
+                console.warn('Zu wenige Sätze verfügbar, prüfe Datenquelle...');
+                smartReload();
+                return;
+            }
+            
             if (!library || library.length === 0) library = buildLibrary();
             correctAnswers = 0;
             
             // Anzahl der Fragen je nach Schwierigkeit und verfügbaren Sätzen
-            const maxQuestions = Math.min(COUNT_PER_ROUND, SENTENCES.length);
+            const questionsCount = getQuestionsCount();
+            const maxQuestions = Math.min(questionsCount, SENTENCES.length);
             selection = pickRandom(library, maxQuestions);
             renderExercises(selection);
             updateScore();
@@ -430,10 +488,62 @@
             }
         });
 
-        // Erste Runde starten
-        window.addEventListener('DOMContentLoaded', function() {
+        // Version und Cache-Info anzeigen
+        function updateVersionInfo() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('de-DE');
+            const dateString = now.toLocaleDateString('de-DE');
+            document.getElementById('version-info').textContent = `${dateString} ${timeString}`;
+        }
+
+        // Intelligente Reload-Funktion für Entwicklung (nur wenn nötig)
+        function smartReload() {
+            // Prüfe ob Sätze korrekt geladen wurden
+            if (!window.SENTENCES_DATA || !window.SENTENCES_DATA[currentDifficulty] || 
+                window.SENTENCES_DATA[currentDifficulty].length < 10) {
+                
+                console.log('Sätze unvollständig geladen, lade sentences.js neu...');
+                
+                // Cache leeren nur wenn nötig
+                if ('caches' in window) {
+                    caches.keys().then(names => {
+                        names.forEach(name => {
+                            caches.delete(name);
+                        });
+                    });
+                }
+                
+                // Neues Script laden
+                const timestamp = new Date().getTime();
+                const newScript = document.createElement('script');
+                newScript.src = `sentences.js?v=${timestamp}`;
+                
+                newScript.onload = function() {
+                    console.log('sentences.js erfolgreich nachgeladen');
+                    loadSentences();
+                    newRound();
+                };
+                
+                // Altes Script entfernen
+                const oldScripts = document.querySelectorAll('script[src*="sentences.js"]');
+                oldScripts.forEach(script => script.remove());
+                
+                // Neues Script hinzufügen
+                document.head.appendChild(newScript);
+            }
+        }
+
+        // App-Initialisierung nach dem Laden der sentences.js
+        function initializeApp() {
+            updateVersionInfo();
             loadSentences(); // Explizit Sätze laden
             newRound();
+        }
+
+        // Warten auf DOM, aber App wird erst initialisiert wenn sentences.js geladen ist
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM geladen, warte auf sentences.js...');
+            // Die Initialisierung passiert jetzt über den onload-Callback des script-Tags
         });
     </script>
 </body>

@@ -24,7 +24,7 @@ window.SENTENCES_DATA = {
     "pre": "Weil es regnet, ",
     "answer": "bleiben",
     "post": " wir heute drinnen.",
-    "emoji": "🌧️"
+    "emoji": "🏠"
   },
   {
     "pre": "Nachdem ",
@@ -1577,14 +1577,14 @@ window.SENTENCES_DATA = {
 
     // CHOREOGRAPHIE - Paar 18
     {
-      "pre": "Die Choreographie für das Ballett ist sehr ",
+      "pre": "Die Choreografie für das Ballett ist sehr ",
       "answer": "elegant",
       "post": ".",
       "emoji": "🩰"
     },
     {
       "pre": "Der Tanzlehrer entwirft eine neue ",
-      "answer": "Choreographie",
+      "answer": ["Choreografie", "Choreographie"],
       "post": ".",
       "emoji": "💃"
     },
