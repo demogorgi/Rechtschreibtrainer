@@ -1552,13 +1552,13 @@ window.SENTENCES_DATA = {
       "pre": "Die Metamorphose verwandelt die Raupe in einen ",
       "answer": "Schmetterling",
       "post": ".",
-      "emoji": "🐛"
+      "emoji": "🦋"
     },
     {
       "pre": "Die Raupe durchlebt eine ",
       "answer": "Metamorphose",
       "post": ".",
-      "emoji": "🦋"
+      "emoji": "🐛➡️🦋"
     },
 
     // PHILOSOPHIE - Paar 17
