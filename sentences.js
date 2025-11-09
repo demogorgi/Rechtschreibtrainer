@@ -13,7 +13,7 @@ window.SENTENCES_DATA = {
   {
     "pre": "Gestern ",
     "answer": "ging",
-    "post": " ich zum ersten Mal ins Schwimmbad.",
+    "post": " ich zum ersten Mal ganz allein ins Schwimmbad.",
     "emoji": "🚶‍♂️🏊‍♂️"
   },
   {
@@ -35,14 +35,14 @@ window.SENTENCES_DATA = {
     "emoji": "🚶‍♂️🥖"
   },
   {
-    "pre": "Letzte Woche ",
+    "pre": "Am Wochenende ",
     "answer": "ging",
     "post": " die ganze Familie in die Boulderhalle.",
-    "emoji": "🚶‍♂️🧗‍♀️"
+    "emoji": "👨‍👩‍👧‍👦➡️🧗‍♀️"
   },
   {
-    "pre": "Tausend mal tausend ergibt",
-    "answer": "eine Million",
+    "pre": "Tausend mal tausend ergibt eine",
+    "answer": " Million",
     "post": ".",
     "emoji": "10⁶"
   },
