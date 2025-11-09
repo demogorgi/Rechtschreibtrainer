@@ -1306,7 +1306,7 @@ window.SENTENCES_DATA = {
     "pre": "Der Frosch ",
     "answer": "quakt",
     "post": " laut.",
-    "emoji": "🐸"
+    "emoji": "🐸🔊"
   },
   {
     "pre": "Der Bus ",
