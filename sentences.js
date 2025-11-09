@@ -1,6 +1,64 @@
 // Alle Sätze für den Rechtschreibtrainer
 // Diese Datei wird von index.html geladen
 window.SENTENCES_DATA = {
+  fokus: [
+  // Hier können später Sätze mit Fokus eingefügt werden, die immer dran kommen
+  // Sätze mit Präteritum von gehen
+  {
+    "pre": "Merke: Das Präteritum (d.h. die Vergangenheitsform) von 'gehen' ist ",
+    "answer": "ging",
+    "post": " und nicht 'gang'. Wenngleich das auch sehr schön klingt, so ist es doch falsch.",
+    "emoji": "🚶‍♂️"
+  },
+  {
+    "pre": "Gestern ",
+    "answer": "ging",
+    "post": " ich zum ersten Mal ins Schwimmbad.",
+    "emoji": "🚶‍♂️🏊‍♂️"
+  },
+  {
+    "pre": "Sie ",
+    "answer": "ging",
+    "post": " jeden Morgen in den Park.",
+    "emoji": "🚶‍♂️🌳"
+  },
+  {
+    "pre": "Als es dunkel wurde, ",
+    "answer": "ging",
+    "post": " er schnell nach Hause.",
+    "emoji": "🌙🏠🚶‍♂️"
+  },
+  {
+    "pre": "Meine Schwester ",
+    "answer": "ging",
+    "post": " allein zum Bäcker.",
+    "emoji": "🚶‍♂️🥖"
+  },
+  {
+    "pre": "Letzte Woche ",
+    "answer": "ging",
+    "post": " die ganze Familie in die Boulderhalle.",
+    "emoji": "🚶‍♂️🧗‍♀️"
+  },
+  {
+    "pre": "Tausend mal tausend ergibt",
+    "answer": "eine Million",
+    "post": ".",
+    "emoji": "10⁶"
+  },
+  {
+    "pre": "Die Wurzel fragt: \"Welche Zahl muss ich mit sich selbst multiplizieren, um die Zahl unter der Wurzel zu erhalten?\". Also ist die Wurzel von 16 ",
+    "answer": "vier",
+    "post": ".",
+    "emoji": "❓"
+  },
+  {
+    "pre": "Die dritte Wurzel fragt: \"Welche Zahl muss ich mit sich selbst und noch einmal mit sich selbst multiplizieren, um die Zahl unter der Wurzel zu erhalten?\". Also ist die dritte Wurzel von 27 ",
+    "answer": "drei",
+    "post": ".",
+    "emoji": "❓"
+  }
+  ],
   normal: [
   {
     "pre": "Wenn ",
@@ -186,7 +244,7 @@ window.SENTENCES_DATA = {
     "pre": "Obwohl es regnet, gehen wir ",
     "answer": "spazieren",
     "post": ".",
-    "emoji": "🌧️"
+    "emoji": "🚶‍♂️🌧️"
   },
   {
     "pre": "Wenn du willst, kannst du ",
@@ -270,7 +328,7 @@ window.SENTENCES_DATA = {
     "pre": "Seitdem wir den Hund haben, gehen wir jeden Tag ",
     "answer": "spazieren",
     "post": ".",
-    "emoji": "🐕"
+    "emoji": "🐕️️🚶‍♂️"
   },
   {
     "pre": "Obwohl ich müde bin, mache ich noch meine ",

@@ -260,9 +260,16 @@
 
         // Funktion zum Laden der Sätze basierend auf der Schwierigkeit
         function loadSentences() {
-            if (window.SENTENCES_DATA && window.SENTENCES_DATA[currentDifficulty]) {
-                SENTENCES = window.SENTENCES_DATA[currentDifficulty];
-                console.log(`${SENTENCES.length} ${currentDifficulty} Sätze aus sentences.js geladen`);
+            if (window.SENTENCES_DATA && window.SENTENCES_DATA[currentDifficulty] && window.SENTENCES_DATA.fokus) {
+                // Lade die Hauptsätze der gewählten Schwierigkeit
+                const mainSentences = window.SENTENCES_DATA[currentDifficulty];
+                // Lade die Fokus-Sätze
+                const focusSentences = window.SENTENCES_DATA.fokus;
+                
+                // Kombiniere beide Arrays: Hauptsätze + Fokus-Sätze
+                SENTENCES = [...mainSentences, ...focusSentences];
+                
+                console.log(`${mainSentences.length} ${currentDifficulty} Sätze + ${focusSentences.length} Fokus-Sätze geladen (gesamt: ${SENTENCES.length})`);
                 
                 // Automatische Überprüfung: Bei sehr wenigen Sätzen nachlargen
                 if (SENTENCES.length < 10) {
@@ -338,7 +345,29 @@
         function renderExercises(items) {
             const container = document.getElementById('exercises');
             container.innerHTML = '';
+            
+            let focusHeaderAdded = false;
+            
             items.forEach((it, i) => {
+                // Füge Zwischenüberschrift vor dem ersten Fokus-Satz ein
+                if (!focusHeaderAdded && it.type === 'focus') {
+                    const focusHeader = document.createElement('div');
+                    focusHeader.style.cssText = `
+                        background: linear-gradient(135deg, #4CAF50, #45a049);
+                        color: white;
+                        padding: 15px 25px;
+                        margin: 30px 0 20px 0;
+                        border-radius: 10px;
+                        text-align: center;
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                    `;
+                    focusHeader.innerHTML = '🎯 Fokussätze - Übe besonders diese Wörter! 🎯';
+                    container.appendChild(focusHeader);
+                    focusHeaderAdded = true;
+                }
+
                 const wrap = document.createElement('div');
                 wrap.className = 'exercise';
 
@@ -473,10 +502,35 @@
             if (!library || library.length === 0) library = buildLibrary();
             correctAnswers = 0;
             
-            // Anzahl der Fragen je nach Schwierigkeit und verfügbaren Sätzen
+            // Anzahl der Fragen je nach Schwierigkeit
             const questionsCount = getQuestionsCount();
-            const maxQuestions = Math.min(questionsCount, SENTENCES.length);
-            selection = pickRandom(library, maxQuestions);
+            
+            // Intelligente Satzauswahl: Hauptsätze + alle Fokus-Sätze
+            if (window.SENTENCES_DATA && window.SENTENCES_DATA[currentDifficulty] && window.SENTENCES_DATA.fokus) {
+                const mainSentences = window.SENTENCES_DATA[currentDifficulty];
+                const focusSentences = window.SENTENCES_DATA.fokus;
+                
+                // Erstelle separate Bibliotheken für Haupt- und Fokus-Sätze
+                const mainLibrary = mainSentences.map((s, i) => ({ id: i + 1, ...s, type: 'main' }));
+                const focusLibrary = focusSentences.map((s, i) => ({ id: mainSentences.length + i + 1, ...s, type: 'focus' }));
+                
+                // Wähle Hauptsätze (questionsCount Anzahl)
+                const selectedMain = pickRandom(mainLibrary, Math.min(questionsCount, mainLibrary.length));
+                
+                // Wähle 3 Fokus-Sätze (oder alle, wenn weniger als 3 vorhanden)
+                const focusCount = Math.min(3, focusLibrary.length);
+                const selectedFocus = pickRandom(focusLibrary, focusCount);
+                
+                // Kombiniere OHNE zu mischen: erst normale, dann Fokus-Sätze
+                selection = [...selectedMain, ...selectedFocus];
+                
+                console.log(`Neue Runde: ${selectedMain.length} ${currentDifficulty}-Sätze + ${selectedFocus.length} Fokus-Sätze`);
+            } else {
+                // Fallback: normale Auswahl wenn Fokus-Sätze nicht verfügbar
+                const maxQuestions = Math.min(questionsCount, SENTENCES.length);
+                selection = pickRandom(library, maxQuestions);
+            }
+            
             renderExercises(selection);
             updateScore();
         }
