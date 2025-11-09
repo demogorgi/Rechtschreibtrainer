@@ -57,6 +57,126 @@ window.SENTENCES_DATA = {
     "answer": "drei",
     "post": ".",
     "emoji": "❓"
+  },
+  {
+    "pre": "Die ",
+    "answer": "Antarktis",
+    "post": " ist der kälteste Kontinent der Erde.",
+    "emoji": "🐧"
+  },
+  {
+    "pre": "Wenn Schnee liegt, kann man mit den Händen einen ",
+    "answer": "Schneeball",
+    "post": " formen.",
+    "emoji": "⛄"
+  },
+  {
+    "pre": "Kommst du bitte mal ",
+    "answer": "hierher",
+    "post": "?",
+    "emoji": "👈"
+  },
+  {
+    "pre": "Seit wann seid ihr schon ",
+    "answer": "hier",
+    "post": "?",
+    "emoji": "👇"
+  },
+  {
+    "pre": "",
+    "answer": "Seid",
+    "post": " ihr schon lange da?",
+    "emoji": "🤚"
+  },
+  {
+    "pre": "",
+    "answer": "Seit",
+    "post": " wann kennt ihr euch?",
+    "emoji": "⏳"
+  },
+  {
+    "pre": "Warte ",
+    "answer": "hier",
+    "post": " auf mich!",
+    "emoji": "👇"
+  },
+  {
+    "pre": "Wer ",
+    "answer": "kann",
+    "post": " mir bei den Hausaufgaben helfen?",
+    "emoji": "🙋"
+  },
+  {
+    "pre": "Das ist ",
+    "answer": "wohl",
+    "post": " die beste Idee, die wir hatten.",
+    "emoji": "💡"
+  },
+  {
+    "pre": "Ich muss ",
+    "answer": "vorher",
+    "post": " noch meine Zähne putzen.",
+    "emoji": "🪥"
+  },
+  {
+    "pre": "Die Sterne am Himmel sind ",
+    "answer": "faszinierend",
+    "post": " schön.",
+    "emoji": "✨"
+  },
+  {
+    "pre": "In der Antarktis leben viele ",
+    "answer": "Robben",
+    "post": ".",
+    "emoji": "🦭"
+  },
+  {
+    "pre": "Stell dich bitte ",
+    "answer": "vorne",
+    "post": " in die Reihe.",
+    "emoji": "👆"
+  },
+  {
+    "pre": "Was ist der ",
+    "answer": "Grund",
+    "post": " für deine Verspätung?",
+    "emoji": "❓"
+  },
+  {
+    "pre": "Als der Wecker klingelte, ",
+    "answer": "wachte",
+    "post": " ich sofort auf.",
+    "emoji": "⏰"
+  },
+  {
+    "pre": "In dem Science-Fiction-Film kam ein ",
+    "answer": "Alien",
+    "post": " zur Erde.",
+    "emoji": "👽"
+  },
+  {
+    "pre": "Wollen wir ",
+    "answer": "Freunde",
+    "post": " sein?",
+    "emoji": "👫"
+  },
+  {
+    "pre": "Das ",
+    "answer": "Netteste",
+    "post": " an ihm ist sein Lächeln.",
+    "emoji": "😊"
+  },
+  {
+    "pre": "Ich komme ",
+    "answer": "vielleicht",
+    "post": " heute Abend mit ins Kino.",
+    "emoji": "🎬"
+  },
+  {
+    "pre": "Der Ball ",
+    "answer": "prallte",
+    "post": " von der Wand ab.",
+    "emoji": "🧱➡️⚽"
   }
   ],
   normal: [
