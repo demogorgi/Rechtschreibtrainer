@@ -395,7 +395,7 @@
 
     <div class="user-section">
         <label for="userName" style="font-size: 1.1em; font-weight: bold; color: #2c5aa0;">👤 Dein Name:</label>
-        <input type="text" id="userName" class="user-input" placeholder="Gib deinen Namen ein..." onchange="saveUserName()" onblur="saveUserName()">
+        <input type="text" id="userName" class="user-input" placeholder="Gib deinen Namen ein..." onchange="saveUserName()" onblur="saveUserName()" autocomplete="off" spellcheck="false">
         <div id="userGreeting" class="user-greeting" style="display: none;"></div>
     </div>
 
@@ -764,6 +764,8 @@
                 input.className = 'text-input';
                 input.id = inputId;
                 input.setAttribute('placeholder', '');
+                input.setAttribute('autocomplete', 'off');
+                input.setAttribute('spellcheck', 'false');
                 const postNode = document.createTextNode((it.post ?? ''));
 
                 // Leerzeichen rund um das Eingabefeld sichern
