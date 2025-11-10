@@ -241,8 +241,8 @@ window.SENTENCES_DATA = {
     "emoji": "❄️"
   },
   {
-    "pre": "Wenn du willst, kannst du ",
-    "answer": "dein Fahrrad",
+    "pre": "Wenn du willst, kannst du dein ",
+    "answer": "Fahrrad",
     "post": " mitnehmen.",
     "emoji": "🚲"
   },
@@ -283,10 +283,16 @@ window.SENTENCES_DATA = {
     "emoji": "✈️"
   },
   {
-    "pre": "Wenn du möchtest, kannst du ",
-    "answer": "das große Stück",
+    "pre": "Wenn du möchtest, kannst du das große ",
+    "answer": "Stück",
     "post": " nehmen.",
     "emoji": "🧩"
+  },
+    {
+    "pre": "Du bist ja vielleicht ",
+    "answer": "groß",
+    "post": " geworden.",
+    "emoji": "📏"
   },
   {
     "pre": "Obwohl wir müde sind, ",
@@ -295,8 +301,8 @@ window.SENTENCES_DATA = {
     "emoji": "📖"
   },
   {
-    "pre": "Wenn ihr fertig seid, könnt ihr ",
-    "answer": "nach Hause",
+    "pre": "Wenn ihr fertig seid, könnt ihr nach ",
+    "answer": "Hause",
     "post": " gehen.",
     "emoji": "🏠"
   },
@@ -307,8 +313,8 @@ window.SENTENCES_DATA = {
     "emoji": "🧩"
   },
   {
-    "pre": "Kannst du mir sagen, wann ",
-    "answer": "die Schule",
+    "pre": "Kannst du mir sagen, wann die ",
+    "answer": "Schule",
     "post": " beginnt?",
     "emoji": "🏫"
   },
@@ -325,8 +331,8 @@ window.SENTENCES_DATA = {
     "emoji": "🧑‍🤝‍🧑"
   },
   {
-    "pre": "Wenn du Hunger hast, kannst du ",
-    "answer": "einen Apfel",
+    "pre": "Wenn du Hunger hast, kannst du einen ",
+    "answer": "Apfel",
     "post": " essen.",
     "emoji": "🍎"
   },
@@ -343,8 +349,8 @@ window.SENTENCES_DATA = {
     "emoji": "🚶‍♂️🌧️"
   },
   {
-    "pre": "Wenn du willst, kannst du ",
-    "answer": "ein Bild",
+    "pre": "Wenn du willst, kannst du ein ",
+    "answer": "Bild",
     "post": " malen.",
     "emoji": "🖼️"
   },
@@ -355,8 +361,8 @@ window.SENTENCES_DATA = {
     "emoji": "🏠"
   },
   {
-    "pre": "Wenn du möchtest, kannst du ",
-    "answer": "das rote Buch",
+    "pre": "Wenn du möchtest, kannst du das rote ",
+    "answer": "Buch",
     "post": " nehmen.",
     "emoji": "📕"
   },
@@ -367,8 +373,8 @@ window.SENTENCES_DATA = {
     "emoji": "🎵"
   },
   {
-    "pre": "Wenn ihr fertig seid, könnt ihr ",
-    "answer": "ins Kino",
+    "pre": "Wenn ihr fertig seid, könnt ihr ins ",
+    "answer": "Kino",
     "post": " gehen.",
     "emoji": "🎬"
   },
@@ -571,8 +577,8 @@ window.SENTENCES_DATA = {
     "emoji": "🪑"
   },
   {
-    "pre": "Wenn du magst, kannst du ",
-    "answer": "deine Freundin",
+    "pre": "Wenn du magst, kannst du deine ",
+    "answer": "Freundin",
     "post": " auch einladen.",
     "emoji": "👭"
   },
