@@ -385,7 +385,7 @@
 <body>
     <div class="header">
         <h1>🚗 Wörter-Rätsel 🚗</h1>
-        <p>Fülle die Lücken aus – Emojis helfen dir dabei. Normal: 10 Fragen, Schwer: 5 Fragen.</p>
+        <p>Fülle die Lücken aus – Emojis helfen dir dabei. Normal: 10 Fragen (7+3 Fokus), Schwer: 8 Fragen (5+3 Fokus).</p>
         <div style="font-size: 0.8em; color: #666; margin-top: 10px;">
             Version: <span id="version-info">Lädt...</span>
             <br>
@@ -699,7 +699,7 @@
         
         // Anzahl Fragen je nach Schwierigkeit
         function getQuestionsCount() {
-            return currentDifficulty === 'schwer' ? 5 : 10;
+            return currentDifficulty === 'schwer' ? 5 : 7;
         }
 
         // Bibliothek mit IDs vorbereiten
