@@ -6,7 +6,113 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Wörter-Rätsel</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Rechtschreibtrainer für Kinder - Interaktive Übungen mit Emojis | Wörter-Rätsel</title>
+    <meta name="description" content="Kostenloser Rechtschreibtrainer für Kinder mit interaktiven Übungen, Emojis und personalisierten Fortschritten. Spielerisch Rechtschreibung lernen mit verschiedenen Schwierigkeitsstufen.">
+    <meta name="keywords" content="Rechtschreibtrainer, Rechtschreibung lernen, Kinder, Grundschule, Übungen, interaktiv, kostenlos, Deutsch, Lückentext, Emojis, Spiele">
+    <meta name="author" content="Rechtschreibtrainer">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="de">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://demogorgi.github.io/Rechtschreibtrainer/">
+    <meta property="og:title" content="Rechtschreibtrainer für Kinder - Interaktive Übungen mit Emojis">
+    <meta property="og:description" content="Kostenloser Rechtschreibtrainer für Kinder mit interaktiven Übungen, Emojis und personalisierten Fortschritten. Spielerisch Rechtschreibung lernen!">
+    <meta property="og:image" content="https://demogorgi.github.io/Rechtschreibtrainer/og-image.png">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://demogorgi.github.io/Rechtschreibtrainer/">
+    <meta property="twitter:title" content="Rechtschreibtrainer für Kinder - Interaktive Übungen mit Emojis">
+    <meta property="twitter:description" content="Kostenloser Rechtschreibtrainer für Kinder mit interaktiven Übungen, Emojis und personalisierten Fortschritten.">
+    <meta property="twitter:image" content="https://demogorgi.github.io/Rechtschreibtrainer/og-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://demogorgi.github.io/Rechtschreibtrainer/">
+    
+    <!-- Structured Data für Suchmaschinen -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Rechtschreibtrainer für Kinder",
+      "description": "Kostenloser interaktiver Rechtschreibtrainer für Kinder mit Emojis und personalisierten Fortschritten",
+      "url": "https://demogorgi.github.io/Rechtschreibtrainer/",
+      "sameAs": [
+        "https://github.com/demogorgi/Rechtschreibtrainer"
+      ],
+      "educationalCredentialAwarded": "Rechtschreibkenntnisse",
+      "teaches": "Deutsche Rechtschreibung",
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "student",
+        "audienceType": "Grundschüler"
+      },
+      "hasOfferingCatalog": {
+        "@type": "OfferingCatalog",
+        "name": "Rechtschreibübungen",
+        "itemListElement": [
+          {
+            "@type": "Course",
+            "name": "Normale Schwierigkeit",
+            "description": "10 Fragen (7 Hauptfragen + 3 Fokussätze)",
+            "educationalLevel": "Grundschule"
+          },
+          {
+            "@type": "Course", 
+            "name": "Schwere Schwierigkeit",
+            "description": "8 Fragen (5 Hauptfragen + 3 Fokussätze)",
+            "educationalLevel": "Weiterführende Schule"
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- FAQ Structured Data für Featured Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Für welches Alter ist der Rechtschreibtrainer geeignet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Rechtschreibtrainer ist für Grundschüler und weiterführende Schulen geeignet. Mit zwei Schwierigkeitsgraden: Normal (10 Fragen) für Grundschüler und Schwer (8 Fragen) für fortgeschrittene Schüler."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "Ist der Rechtschreibtrainer kostenlos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, der Rechtschreibtrainer ist vollständig kostenlos und ohne Anmeldung nutzbar. Alle Funktionen stehen sofort zur Verfügung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie funktioniert die Fortschritt-Verfolgung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jeder Benutzer kann seinen Namen eingeben und erhält individuelle Statistiken und Fortschritts-Charts. Die Daten werden lokal im Browser gespeichert."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Übungsarten gibt es?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es gibt Lückentexte mit Emoji-Hinweisen, Fokussätze für besonders schwierige Wörter und zwei Schwierigkeitsgrade mit verschiedenen Wortarten und Rechtschreibregeln."
+          }
+        }
+      ]
+    }
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -383,7 +489,7 @@
     </style>
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <h1>🚗 Wörter-Rätsel 🚗</h1>
         <p>Fülle die Lücken aus – Emojis helfen dir dabei. Normal: 10 Fragen (7+3 Fokus), Schwer: 8 Fragen (5+3 Fokus).</p>
         <div style="font-size: 0.8em; color: #666; margin-top: 10px;">
@@ -391,15 +497,16 @@
             <br>
             <button class="speak-button" onclick="checkForUpdates()" title="Neue Version laden" style="font-size: inherit; font-family: inherit; padding: 6px 10px; margin-top: 5px;">Auf neue Version prüfen</button>
         </div>
-    </div>
+    </header>
 
-    <div class="user-section">
-        <label for="userName" style="font-size: 1.1em; font-weight: bold; color: #2c5aa0;">👤 Dein Name:</label>
-        <input type="text" id="userName" class="user-input" placeholder="Gib deinen Namen ein..." onchange="saveUserName()" onblur="saveUserName()" autocomplete="off" spellcheck="false">
-        <div id="userGreeting" class="user-greeting" style="display: none;"></div>
-    </div>
+    <main>
+        <section class="user-section" aria-label="Benutzer-Einstellungen">
+            <label for="userName" style="font-size: 1.1em; font-weight: bold; color: #2c5aa0;">👤 Dein Name:</label>
+            <input type="text" id="userName" class="user-input" placeholder="Gib deinen Namen ein..." onchange="saveUserName()" onblur="saveUserName()" autocomplete="off" spellcheck="false">
+            <div id="userGreeting" class="user-greeting" style="display: none;"></div>
+        </section>
 
-    <div class="difficulty-selector">
+        <section class="difficulty-selector" aria-label="Schwierigkeitsgrad auswählen">
         <div style="text-align: center; margin: 20px 0;">
             <label style="font-size: 1.1em; font-weight: bold; color: #2c5aa0; margin-right: 15px;">Schwierigkeit:</label>
             <label style="margin-right: 15px;">
@@ -411,17 +518,17 @@
                 <span style="margin-left: 5px;">Schwer</span>
             </label>
         </div>
-    </div>
+        </section>
 
-    <div class="score">
-        Punkte: <span id="score">0</span> / <span id="total">-</span>
-        <div style="margin-top:10px;">
-            <button class="check-button" onclick="checkAll()">Alles prüfen</button>
-            <button class="speak-button" onclick="newRound()">Neu starten</button>
-        </div>
-    </div>
+        <section class="score" aria-label="Punktestand und Aktionen">
+            Punkte: <span id="score">0</span> / <span id="total">-</span>
+            <div style="margin-top:10px;">
+                <button class="check-button" onclick="checkAll()">Alles prüfen</button>
+                <button class="speak-button" onclick="newRound()">Neu starten</button>
+            </div>
+        </section>
 
-    <div class="chart-container" id="chartContainer">
+        <aside class="chart-container" id="chartContainer" aria-label="Fortschritts-Statistiken">
         <div class="chart-title">📊 Deine Fortschritte</div>
         <div class="chart" id="chart"></div>
         <div class="chart-stats" id="chartStats"></div>
@@ -429,9 +536,10 @@
             <button class="speak-button" onclick="clearStats()">Statistiken löschen</button>
             <button class="check-button" onclick="hideChart()">Ausblenden</button>
         </div>
-    </div>
+        </aside>
 
-    <div id="exercises"></div>
+        <section id="exercises" aria-label="Rechtschreibübungen"></section>
+    </main>
 
     <script>
         // Alle Sätze werden aus der externen JavaScript-Datei geladen
