@@ -2,182 +2,170 @@
 // Diese Datei wird von index.html geladen
 window.SENTENCES_DATA = {
   fokus: [
-  // Hier können später Sätze mit Fokus eingefügt werden, die immer dran kommen
-  // Sätze mit Präteritum von gehen
-  {
-    "pre": "Merke: Das Präteritum (d.h. die Vergangenheitsform) von 'gehen' ist ",
-    "answer": "ging",
-    "post": " und nicht 'gang'. Wenngleich das auch sehr schön klingt, so ist es doch falsch.",
-    "emoji": "🚶‍♂️"
-  },
-  {
-    "pre": "Gestern ",
-    "answer": "ging",
-    "post": " ich zum ersten Mal ganz allein ins Schwimmbad.",
-    "emoji": "🚶‍♂️🏊‍♂️"
-  },
-  {
-    "pre": "Sie ",
-    "answer": "ging",
-    "post": " jeden Morgen in den Park.",
-    "emoji": "🚶‍♂️🌳"
-  },
-  {
-    "pre": "Als es dunkel wurde, ",
-    "answer": "ging",
-    "post": " er schnell nach Hause.",
-    "emoji": "🌙🏠🚶‍♂️"
-  },
-  {
-    "pre": "Meine Schwester ",
-    "answer": "ging",
-    "post": " allein zum Bäcker.",
-    "emoji": "🚶‍♂️🥖"
-  },
-  {
-    "pre": "Am Wochenende ",
-    "answer": "ging",
-    "post": " die ganze Familie in die Boulderhalle.",
-    "emoji": "👨‍👩‍👧‍👦➡️🧗‍♀️"
-  },
-  {
-    "pre": "Tausend mal tausend ergibt eine ",
-    "answer": "Million",
-    "post": ".",
-    "emoji": "10⁶"
-  },
-  {
-    "pre": "Die Wurzel fragt: \"Welche Zahl muss ich mit sich selbst multiplizieren, um die Zahl unter der Wurzel zu erhalten?\". Also ist die Wurzel von 16 ",
-    "answer": "vier",
-    "post": ".",
-    "emoji": "❓"
-  },
-  {
-    "pre": "Die dritte Wurzel fragt: \"Welche Zahl muss ich mit sich selbst und noch einmal mit sich selbst multiplizieren, um die Zahl unter der Wurzel zu erhalten?\". Also ist die dritte Wurzel von 27 ",
-    "answer": "drei",
-    "post": ".",
-    "emoji": "❓"
-  },
-  {
-    "pre": "Die ",
-    "answer": "Antarktis",
-    "post": " ist der kälteste Kontinent der Erde.",
-    "emoji": "🐧"
-  },
-  {
-    "pre": "Wenn Schnee liegt, kann man mit den Händen einen ",
-    "answer": "Schneeball",
-    "post": " formen.",
-    "emoji": "⛄"
-  },
-  {
-    "pre": "Kommst du bitte mal ",
-    "answer": "hierher",
-    "post": "?",
-    "emoji": "👈"
-  },
-  {
-    "pre": "Seit wann seid ihr schon ",
-    "answer": "hier",
-    "post": "?",
-    "emoji": "👇"
-  },
-  {
-    "pre": "",
-    "answer": "Seid",
-    "post": " ihr schon lange da?",
-    "emoji": "🤚"
-  },
-  {
-    "pre": "",
-    "answer": "Seit",
-    "post": " wann kennt ihr euch?",
-    "emoji": "⏳"
-  },
-  {
-    "pre": "Warte ",
-    "answer": "hier",
-    "post": " auf mich!",
-    "emoji": "👇"
-  },
-  {
-    "pre": "Wer ",
-    "answer": "kann",
-    "post": " mir bei den Hausaufgaben helfen?",
-    "emoji": "🙋"
-  },
-  {
-    "pre": "Das ist ",
-    "answer": "wohl",
-    "post": " die beste Idee, die wir hatten.",
-    "emoji": "💡"
-  },
-  {
-    "pre": "Ich muss ",
-    "answer": "vorher",
-    "post": " noch meine Zähne putzen.",
-    "emoji": "🪥"
-  },
-  {
-    "pre": "Die Sterne am Himmel sind ",
-    "answer": "faszinierend",
-    "post": " schön.",
-    "emoji": "✨"
-  },
-  {
-    "pre": "In der Antarktis leben viele ",
-    "answer": "Robben",
-    "post": ".",
-    "emoji": "🦭"
-  },
-  {
-    "pre": "Stell dich bitte ",
-    "answer": "vorne",
-    "post": " in die Reihe.",
-    "emoji": "👆"
-  },
-  {
-    "pre": "Was ist der ",
-    "answer": "Grund",
-    "post": " für deine Verspätung?",
-    "emoji": "❓"
-  },
-  {
-    "pre": "Als der Wecker klingelte, ",
-    "answer": "wachte",
-    "post": " ich sofort auf.",
-    "emoji": "⏰"
-  },
-  {
-    "pre": "In dem Science-Fiction-Film kam ein ",
-    "answer": "Alien",
-    "post": " zur Erde.",
-    "emoji": "👽"
-  },
-  {
-    "pre": "Wollen wir ",
-    "answer": "Freunde",
-    "post": " sein?",
-    "emoji": "👫"
-  },
-  {
-    "pre": "Das ",
-    "answer": "Netteste",
-    "post": " an ihm ist sein Lächeln.",
-    "emoji": "😊"
-  },
-  {
-    "pre": "Ich komme ",
-    "answer": "vielleicht",
-    "post": " heute Abend mit ins Kino.",
-    "emoji": "🎬"
-  },
-  {
-    "pre": "Der Ball ",
-    "answer": "prallte",
-    "post": " von der Wand ab.",
-    "emoji": "🧱➡️⚽"
-  }
+    // Hier können später Sätze mit Fokus eingefügt werden, die immer dran kommen
+    // Sätze mit Präteritum von gehen
+    {
+      "pre": "Merke: Das Präteritum (d.h. die Vergangenheitsform) von 'gehen' ist ",
+      "answer": "ging",
+      "post": " und nicht 'gang'. Wenngleich das auch sehr schön klingt, so ist es doch falsch.",
+      "emoji": "🚶‍♂️"
+    },
+    {
+      "pre": "Als es dunkel wurde, ",
+      "answer": "ging",
+      "post": " er schnell nach Hause.",
+      "emoji": "🌙🏠🚶‍♂️"
+    },
+    {
+      "pre": "Am Wochenende ",
+      "answer": "ging",
+      "post": " die ganze Familie in die Boulderhalle.",
+      "emoji": "👨‍👩‍👧‍👦➡️🧗‍♀️"
+    },
+    {
+      "pre": "Tausend mal tausend ergibt eine ",
+      "answer": "Million",
+      "post": ".",
+      "emoji": "10⁶"
+    },
+    {
+      "pre": "Tausend mal tausend mal drei ergibt drei ",
+      "answer": "Millionen",
+      "post": ".",
+      "emoji": "3·10⁶"
+    },
+    {
+      "pre": "Die Wurzel fragt: \"Welche Zahl muss ich mit sich selbst multiplizieren, um die Zahl unter der Wurzel zu erhalten?\". Also ist die Wurzel von 16 ",
+      "answer": "vier",
+      "post": ".",
+      "emoji": "❓"
+    },
+    {
+      "pre": "Die dritte Wurzel fragt: \"Welche Zahl muss ich mit sich selbst und noch einmal mit sich selbst multiplizieren, um die Zahl unter der Wurzel zu erhalten?\". Also ist die dritte Wurzel von 27 ",
+      "answer": "drei",
+      "post": ".",
+      "emoji": "❓"
+    },
+    {
+      "pre": "Die ",
+      "answer": "Antarktis",
+      "post": " ist der kälteste Kontinent der Erde.",
+      "emoji": "🐧"
+    },
+    {
+      "pre": "Wenn Schnee liegt, kann man mit den Händen einen ",
+      "answer": "Schneeball",
+      "post": " formen.",
+      "emoji": "❄️⚽"
+    },
+    {
+      "pre": "Kommst du bitte mal ",
+      "answer": "hierher",
+      "post": "?",
+      "emoji": "👈"
+    },
+    {
+      "pre": "Seit wann seid ihr schon ",
+      "answer": "hier",
+      "post": "?",
+      "emoji": "👇"
+    },
+    {
+      "pre": "",
+      "answer": "Seid",
+      "post": " ihr schon lange da?",
+      "emoji": "🤚"
+    },
+    {
+      "pre": "",
+      "answer": "Seit",
+      "post": " wann kennt ihr euch?",
+      "emoji": "⏳"
+    },
+    {
+      "pre": "Warte ",
+      "answer": "hier",
+      "post": " auf mich!",
+      "emoji": "👇"
+    },
+    {
+      "pre": "Wer ",
+      "answer": "kann",
+      "post": " mir bei den Hausaufgaben helfen?",
+      "emoji": "🙋"
+    },
+    {
+      "pre": "Das ist ",
+      "answer": "wohl",
+      "post": " die beste Idee, die wir hatten.",
+      "emoji": "💡"
+    },
+    {
+      "pre": "Ich muss ",
+      "answer": "vorher",
+      "post": " noch meine Zähne putzen.",
+      "emoji": "🪥"
+    },
+    {
+      "pre": "Die Sterne am Himmel sind ",
+      "answer": "faszinierend",
+      "post": " schön.",
+      "emoji": "✨"
+    },
+    {
+      "pre": "In der Antarktis leben viele ",
+      "answer": "Robben",
+      "post": ".",
+      "emoji": "🦭"
+    },
+    {
+      "pre": "Stell dich bitte ",
+      "answer": "vorne",
+      "post": " in die Reihe.",
+      "emoji": "👆"
+    },
+    {
+      "pre": "Was ist der ",
+      "answer": "Grund",
+      "post": " für deine Verspätung?",
+      "emoji": "❓"
+    },
+    {
+      "pre": "Als der Wecker klingelte, ",
+      "answer": "wachte",
+      "post": " ich sofort auf.",
+      "emoji": "⏰"
+    },
+    {
+      "pre": "In dem Science-Fiction-Film kam ein ",
+      "answer": "Alien",
+      "post": " zur Erde.",
+      "emoji": "👽"
+    },
+    {
+      "pre": "Wollen wir ",
+      "answer": "Freunde",
+      "post": " sein?",
+      "emoji": "👫"
+    },
+    {
+      "pre": "Das ",
+      "answer": "Netteste",
+      "post": " an ihm ist sein Lächeln.",
+      "emoji": "😊"
+    },
+    {
+      "pre": "Ich komme ",
+      "answer": "vielleicht",
+      "post": " heute Abend mit ins Kino.",
+      "emoji": "🎬"
+    },
+    {
+      "pre": "Der Ball ",
+      "answer": "prallte",
+      "post": " von der Wand ab.",
+      "emoji": "🧱➡️⚽"
+    }
   ],
   normal: [
   {
@@ -227,12 +215,6 @@ window.SENTENCES_DATA = {
     "answer": "sein",
     "post": ".",
     "emoji": "🤫"
-  },
-  {
-    "pre": "Sie möchte wissen, ob ",
-    "answer": "Anna",
-    "post": " morgen kommt.",
-    "emoji": "👧"
   },
   {
     "pre": "Wenn du fertig bist, kannst du ",
