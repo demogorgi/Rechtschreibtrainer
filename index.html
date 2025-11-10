@@ -186,6 +186,189 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
+        .user-section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .user-input {
+            padding: 10px 15px;
+            font-size: 1.1em;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            margin: 0 10px;
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        .user-input:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+        
+        .user-greeting {
+            font-size: 1.2em;
+            color: #2c5aa0;
+            margin-top: 15px;
+        }
+        
+        .chart-container {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: none;
+        }
+        
+        .chart-title {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 20px;
+        }
+        
+        .chart {
+            display: flex;
+            align-items: end;
+            justify-content: space-around;
+            height: 200px;
+            border-bottom: 2px solid #ddd;
+            border-left: 2px solid #ddd;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        
+        .bar {
+            background: linear-gradient(to top, #4CAF50, #45a049);
+            border-radius: 5px 5px 0 0;
+            min-width: 30px;
+            max-width: 80px;
+            flex: 1;
+            margin: 0 2px;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+        
+        .bar:hover {
+            background: linear-gradient(to top, #45a049, #3d8b40);
+        }
+        
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8em;
+            color: #666;
+            white-space: nowrap;
+        }
+        
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8em;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        
+        .chart-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #2c5aa0;
+        }
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 20px;
+        }
+        
+        .chart {
+            display: flex;
+            align-items: end;
+            justify-content: space-around;
+            height: 200px;
+            border-bottom: 2px solid #ddd;
+            border-left: 2px solid #ddd;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        
+        .bar {
+            background: linear-gradient(to top, #4CAF50, #45a049);
+            border-radius: 5px 5px 0 0;
+            min-width: 30px;
+            max-width: 80px;
+            flex: 1;
+            margin: 0 2px;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+        
+        .bar:hover {
+            background: linear-gradient(to top, #45a049, #3d8b40);
+        }
+        
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8em;
+            color: #666;
+            white-space: nowrap;
+        }
+        
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8em;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        
+        .chart-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #2c5aa0;
+        }
+        
         @media (max-width: 768px) {
             .exercise {
                 flex-direction: column;
@@ -210,6 +393,12 @@
         </div>
     </div>
 
+    <div class="user-section">
+        <label for="userName" style="font-size: 1.1em; font-weight: bold; color: #2c5aa0;">👤 Dein Name:</label>
+        <input type="text" id="userName" class="user-input" placeholder="Gib deinen Namen ein..." onchange="saveUserName()" onblur="saveUserName()">
+        <div id="userGreeting" class="user-greeting" style="display: none;"></div>
+    </div>
+
     <div class="difficulty-selector">
         <div style="text-align: center; margin: 20px 0;">
             <label style="font-size: 1.1em; font-weight: bold; color: #2c5aa0; margin-right: 15px;">Schwierigkeit:</label>
@@ -229,6 +418,16 @@
         <div style="margin-top:10px;">
             <button class="check-button" onclick="checkAll()">Alles prüfen</button>
             <button class="speak-button" onclick="newRound()">Neu starten</button>
+        </div>
+    </div>
+
+    <div class="chart-container" id="chartContainer">
+        <div class="chart-title">📊 Deine Fortschritte</div>
+        <div class="chart" id="chart"></div>
+        <div class="chart-stats" id="chartStats"></div>
+        <div style="text-align: center; margin-top: 15px;">
+            <button class="speak-button" onclick="clearStats()">Statistiken löschen</button>
+            <button class="check-button" onclick="hideChart()">Ausblenden</button>
         </div>
     </div>
 
@@ -318,6 +517,185 @@
         let library = [];
         let selection = [];
         let correctAnswers = 0;
+        let currentUser = '';
+        
+        // Benutzer-Management
+        function saveUserName() {
+            const userName = document.getElementById('userName').value.trim();
+            if (userName) {
+                currentUser = userName;
+                localStorage.setItem('rechtschreibtrainer_current_user', userName);
+                showUserGreeting(userName);
+                updateChartTitle();
+            }
+        }
+        
+        function loadUserName() {
+            const savedUser = localStorage.getItem('rechtschreibtrainer_current_user');
+            if (savedUser) {
+                currentUser = savedUser;
+                document.getElementById('userName').value = savedUser;
+                showUserGreeting(savedUser);
+            }
+        }
+        
+        function showUserGreeting(name) {
+            const greeting = document.getElementById('userGreeting');
+            greeting.textContent = `Hallo ${name}! 👋 Viel Erfolg beim Üben!`;
+            greeting.style.display = 'block';
+        }
+        
+        function updateChartTitle() {
+            const chartTitle = document.querySelector('.chart-title');
+            if (currentUser && chartTitle) {
+                chartTitle.textContent = `📊 ${currentUser}s Fortschritte`;
+            }
+        }
+        
+        // Scoring System mit Benutzer-Support
+        function saveScore(score, total, difficulty) {
+            if (!currentUser) {
+                alert('Bitte gib zuerst deinen Namen ein! 👤');
+                document.getElementById('userName').focus();
+                return;
+            }
+            
+            const gameStats = {
+                score: score,
+                total: total,
+                percentage: Math.round((score / total) * 100),
+                difficulty: difficulty,
+                date: new Date().toLocaleDateString('de-DE'),
+                timestamp: Date.now(),
+                user: currentUser
+            };
+            
+            let allScores = JSON.parse(localStorage.getItem('rechtschreibtrainer_all_scores') || '{}');
+            if (!allScores[currentUser]) {
+                allScores[currentUser] = [];
+            }
+            
+            allScores[currentUser].push(gameStats);
+            
+            // Nur die letzten 20 Spiele pro Benutzer behalten
+            if (allScores[currentUser].length > 20) {
+                allScores[currentUser] = allScores[currentUser].slice(-20);
+            }
+            
+            localStorage.setItem('rechtschreibtrainer_all_scores', JSON.stringify(allScores));
+            console.log('Punktestand gespeichert für', currentUser + ':', gameStats);
+        }
+        
+        function loadScores(userName = currentUser) {
+            if (!userName) return [];
+            const allScores = JSON.parse(localStorage.getItem('rechtschreibtrainer_all_scores') || '{}');
+            return allScores[userName] || [];
+        }
+        
+        function clearStats() {
+            if (!currentUser) {
+                alert('Bitte gib zuerst deinen Namen ein!');
+                return;
+            }
+            
+            if (confirm(`Möchtest du wirklich alle Statistiken von ${currentUser} löschen?`)) {
+                let allScores = JSON.parse(localStorage.getItem('rechtschreibtrainer_all_scores') || '{}');
+                delete allScores[currentUser];
+                localStorage.setItem('rechtschreibtrainer_all_scores', JSON.stringify(allScores));
+                hideChart();
+                alert(`Statistiken von ${currentUser} wurden gelöscht!`);
+            }
+        }
+        
+        function showChart() {
+            if (!currentUser) {
+                alert('Bitte gib zuerst deinen Namen ein! 👤');
+                document.getElementById('userName').focus();
+                return;
+            }
+            
+            const scores = loadScores(currentUser);
+            if (scores.length === 0) {
+                alert(`Noch keine Spiele für ${currentUser}! Spiele erst ein paar Runden.`);
+                return;
+            }
+            
+            const chartContainer = document.getElementById('chartContainer');
+            const chart = document.getElementById('chart');
+            const stats = document.getElementById('chartStats');
+            
+            // Chart leeren
+            chart.innerHTML = '';
+            
+            // Balken erstellen
+            const maxHeight = 180;
+            scores.forEach((game, index) => {
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+                
+                const height = (game.percentage / 100) * maxHeight;
+                bar.style.height = height + 'px';
+                
+                // Farbe je nach Leistung
+                if (game.percentage >= 80) {
+                    bar.style.background = 'linear-gradient(to top, #4CAF50, #45a049)';
+                } else if (game.percentage >= 60) {
+                    bar.style.background = 'linear-gradient(to top, #FF9800, #F57C00)';
+                } else {
+                    bar.style.background = 'linear-gradient(to top, #f44336, #d32f2f)';
+                }
+                
+                // Label mit Datum
+                const label = document.createElement('div');
+                label.className = 'bar-label';
+                label.textContent = game.date;
+                bar.appendChild(label);
+                
+                // Wert anzeigen
+                const value = document.createElement('div');
+                value.className = 'bar-value';
+                value.textContent = game.percentage + '%';
+                bar.appendChild(value);
+                
+                // Tooltip
+                bar.title = `${game.date}\n${game.score}/${game.total} Punkte (${game.percentage}%)\nSchwierigkeit: ${game.difficulty}`;
+                
+                chart.appendChild(bar);
+            });
+            
+            // Statistiken berechnen
+            const avgScore = Math.round(scores.reduce((sum, game) => sum + game.percentage, 0) / scores.length);
+            const bestGame = scores.reduce((best, game) => game.percentage > best.percentage ? game : best);
+            const totalGames = scores.length;
+            const lastGame = scores[scores.length - 1];
+            
+            stats.innerHTML = `
+                <div class="stat-item">
+                    <div class="stat-value">${avgScore}%</div>
+                    <div>Durchschnitt</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${bestGame.percentage}%</div>
+                    <div>Bestes Ergebnis</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${totalGames}</div>
+                    <div>Spiele gespielt</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${lastGame.percentage}%</div>
+                    <div>Letztes Spiel</div>
+                </div>
+            `;
+            
+            updateChartTitle();
+            chartContainer.style.display = 'block';
+            chartContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        function hideChart() {
+            document.getElementById('chartContainer').style.display = 'none';
+        }
         
         // Anzahl Fragen je nach Schwierigkeit
         function getQuestionsCount() {
@@ -482,11 +860,32 @@
         }
 
         function checkAll() {
+            console.log('checkAll() aufgerufen');
+            console.log('Anzahl Fragen:', selection.length);
+            
             selection.forEach((it, i) => checkAnswer(i, it.answer));
+            
+            console.log('Erreichte Punkte:', correctAnswers, 'von', selection.length);
+            
+            // Punkte speichern wenn alle Fragen beantwortet wurden
+            if (selection.length > 0) {
+                console.log('Speichere Punktestand...');
+                saveScore(correctAnswers, selection.length, currentDifficulty);
+                
+                // Chart sofort anzeigen (ohne Verzögerung zum Testen)
+                console.log('Zeige Chart...');
+                showChart();
+            } else {
+                console.log('Keine Fragen zum Speichern vorhanden');
+            }
+            
             document.querySelector('.score').scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         function newRound() {
+            // Chart verstecken bei neuer Runde
+            hideChart();
+            
             // Lade Sätze falls noch nicht geladen
             if (SENTENCES.length === 0) {
                 loadSentences();
@@ -641,6 +1040,7 @@
         // App-Initialisierung nach dem Laden der sentences.js
         function initializeApp() {
             updateVersionInfo();
+            loadUserName(); // Benutzername laden
             loadSentences(); // Explizit Sätze laden
             newRound();
         }

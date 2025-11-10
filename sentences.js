@@ -41,8 +41,8 @@ window.SENTENCES_DATA = {
     "emoji": "👨‍👩‍👧‍👦➡️🧗‍♀️"
   },
   {
-    "pre": "Tausend mal tausend ergibt eine",
-    "answer": " Million",
+    "pre": "Tausend mal tausend ergibt eine ",
+    "answer": "Million",
     "post": ".",
     "emoji": "10⁶"
   },
@@ -203,12 +203,6 @@ window.SENTENCES_DATA = {
     "answer": "bleiben",
     "post": " wir heute drinnen.",
     "emoji": "🏠"
-  },
-  {
-    "pre": "Nachdem ",
-    "answer": "Paul",
-    "post": " den Ball geworfen hatte, rannte er los.",
-    "emoji": "🏃"
   },
   {
     "pre": "Während ",
