@@ -829,12 +829,6 @@ window.SENTENCES_DATA = {
     "emoji": "🌾"
   },
   {
-    "pre": "Das Geheimnis bleibt im ",
-    "answer": "geheim",
-    "post": ".",
-    "emoji": "🤫"
-  },
-  {
     "pre": "Im Zoo gibt es ",
     "answer": "viele",
     "post": " Tiere.",
