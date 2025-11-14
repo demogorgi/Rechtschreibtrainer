@@ -165,6 +165,102 @@ window.SENTENCES_DATA = {
       "answer": "prallte",
       "post": " von der Wand ab.",
       "emoji": "🧱➡️⚽"
+    },
+    
+    // x/chs-Unterscheidung - wichtige Rechtschreibregel
+    {
+      "pre": "Im Fitnessstudio können wir ",
+      "answer": "boxen",
+      "post": " und Krafttraining machen.",
+      "emoji": "🥊"
+    },
+    {
+      "pre": "Die Pflanzen ",
+      "answer": "wachsen",
+      "post": " im Frühling besonders schnell.",
+      "emoji": "🌱"
+    },
+    {
+      "pre": "Wir können verschiedene Kisten und ",
+      "answer": "Boxen",
+      "post": " stapeln.",
+      "emoji": "📦"
+    },
+    {
+      "pre": "Die Haare ",
+      "answer": "wachsen",
+      "post": " jeden Monat ein paar Zentimeter.",
+      "emoji": "💇‍♀️"
+    },
+    
+    // ei/ai-Unterscheidung - schwierige Rechtschreibregel
+    {
+      "pre": "Aus ",
+      "answer": "Mais",
+      "post": " macht man Popcorn.",
+      "emoji": "🌽"
+    },
+    {
+      "pre": "Zum Mittagessen essen wir ",
+      "answer": "Reis",
+      "post": " mit Gemüse.",
+      "emoji": "🍚"
+    },
+    {
+      "pre": "Die Körner vom ",
+      "answer": "Mais",
+      "post": " sind gelb und süß.",
+      "emoji": "🌽"
+    },
+    {
+      "pre": "Der ",
+      "answer": "Reis",
+      "post": " wird in großen Feldern angebaut.",
+      "emoji": "🌾"
+    },
+    {
+      "pre": "Heute gibt es ",
+      "answer": "Reis",
+      "post": " mit Curry.",
+      "emoji": "🍛"
+    },
+    
+    // ch-Laute - verschiedene Aussprachen
+    {
+      "pre": "Das kleine Mädchen ",
+      "answer": "lächelt",
+      "post": " fröhlich.",
+      "emoji": "😊"
+    },
+    {
+      "pre": "Der Drache ",
+      "answer": "fliegt",
+      "post": " hoch am Himmel.",
+      "emoji": "🐉"
+    },
+    {
+      "pre": "In der Küche ",
+      "answer": "riecht",
+      "post": " es nach frischen Keksen.",
+      "emoji": "🍪"
+    },
+    {
+      "pre": "Das ",
+      "answer": "Dach",
+      "post": " ist rot gedeckt.",
+      "emoji": "🏠"
+    },
+    {
+      "pre": "Wir ",
+      "answer": "suchen",
+      "post": " nach dem verlorenen Schlüssel.",
+      "emoji": "🔍"
+    },
+    {
+      "pre": "Das ",
+      "answer": "Mädchen",
+      "post": " spielt im Garten.",
+      "emoji": "👧"
     }
   ],
   normal: [
